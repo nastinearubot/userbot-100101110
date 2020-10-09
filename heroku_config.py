@@ -4,8 +4,7 @@ class Var(object):
     APP_ID = int(os.environ.get("APP_ID", 1354863))
     # 6 is a placeholder
     API_HASH = os.environ.get("API_HASH", "7faa797cba87851ac8533e137ed28186")
-    STRING_SESSION = os.environ.get("STRING_SESSION", "1BJWap1wBuwLZ72GWtWzNJMVJPGEp-mXj3UCLIjg0XW1E4nGCkDy2ovjeDluLAAXzccNDiHKPYaF4kWXmzO3kPXDz70RM4zMxvpfmKQ-RUMINDEB-wRczZtMyKFdT-slhDsaP7n5hx9S8MT_XahGzNnAaRHk2J6jZoPgbpvcVKh7IVb0eOPLpHZM2hsM6Q7D6_9wXHLB_3lVnH5_1X0TV08IVm-7Ze2wXgc-dhx0HQgYmx-Up80j1Ld-vUpnk_y9bgq3azYPpFP4gXYNsZ260M4Bqa1z2bOVWjoziwMJ53ueNhi9Wjm4YiyqzxAU70p0zJ7882tEyuXeJ42jocZQfDmpSGsmDLRY=
-")
+    STRING_SESSION = os.environ.get("STRING_SESSION", "1BJWap1wBuwLZ72GWtWzNJMVJPGEp-mXj3UCLIjg0XW1E4nGCkDy2ovjeDluLAAXzccNDiHKPYaF4kWXmzO3kPXDz70RM4zMxvpfmKQ-RUMINDEB-wRczZtMyKFdT-slhDsaP7n5hx9S8MT_XahGzNnAaRHk2J6jZoPgbpvcVKh7IVb0eOPLpHZM2hsM6Q7D6_9wXHLB_3lVnH5_1X0TV08IVm-7Ze2wXgc-dhx0HQgYmx-Up80j1Ld-vUpnk_y9bgq3azYPpFP4gXYNsZ260M4Bqa1z2bOVWjoziwMJ53ueNhi9Wjm4YiyqzxAU70p0zJ7882tEyuXeJ42jocZQfDmpSGsmDLRY=")
     DB_URI = os.environ.get("DATABASE_URL", "postgres://ofcnipdqfpiizo:13f750b0845153527640824a41d2ce49e92ef81ef47353048ab0515c71c898ca@ec2-54-235-181-120.compute-1.amazonaws.com:5432/d7c47pofadq5ld")
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./userbot/DOWNLOADS/")
     LOGGER = True
