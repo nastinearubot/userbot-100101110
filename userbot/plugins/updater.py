@@ -57,7 +57,7 @@ async def update_requirements():
 @register(outgoing=True, pattern="^\.update(?: |$)(.*)")
 async def upstream(ups):
     "For .update command, check if the bot is up to date, update if specified"
-    await ups.edit('**Ricerca update in corso....**')
+    await ups.edit('**🔎 Ricerca update in corso...**')
     conf = ups.pattern_match.group(1)
     off_repo = UPSTREAM_REPO_URL
     force_update = False
@@ -137,7 +137,7 @@ async def upstream(ups):
         await ups.edit(
             '**Forza aggiornamento ubot code stabile, attendere...**')
     else:
-        await ups.edit('**Ubot in aggiornamento attendere....**')
+        await ups.edit('**🔄 Userbot in aggiornamento attendere...**')
     # We're in a Heroku Dyno, handle it's memez.
     if HEROKU_API_KEY is not None:
         import heroku3
@@ -160,7 +160,7 @@ async def upstream(ups):
             )
             repo.__del__()
             return
-        await ups.edit('**Ubot dyno in progressione, attendi 5 mins il completamento**'
+        await ups.edit(f'**✅ Userbot aggiornato correttamente, riavvio in corso.**\n**⏰ Tempo stimato: 5 secondi.**'
                        )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
