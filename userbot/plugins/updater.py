@@ -160,7 +160,7 @@ async def upstream(ups):
             )
             repo.__del__()
             return
-        await ups.edit(f'**✅ Userbot aggiornato correttamente, riavvio in corso.**\n**⏰ Tempo stimato: 5 secondi.**'
+        await ups.edit(f'**✅ Userbot aggiornato correttamente, riavvio in corso.**\n**⏰ Tempo stimato: 5 secondi**'
                        )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
@@ -178,7 +178,7 @@ async def upstream(ups):
             repo.__del__()
             return
         await ups.edit('**Update in corso...**\n'
-                       '**Riavvio, attendi 5 minuti e premi `.alive`**')
+                       '**Riavvio, attendi 5 secondi e premi `.alive`**')
     else:
         # Classic Updater, pretty straightforward.
         try:
@@ -187,7 +187,7 @@ async def upstream(ups):
             repo.git.reset("--hard", "FETCH_HEAD")
         reqs_upgrade = await update_requirements()
         await ups.edit('**Update in corso...**\n'
-                       '**Attendi 5 minuti e premi `.alive`**')
+                       '**Attendi 5 secondi e premi `.alive`**')
         # Spin a new instance of bot
         args = [sys.executable, "-m", "userbot"]
         execle(sys.executable, *args, environ)
