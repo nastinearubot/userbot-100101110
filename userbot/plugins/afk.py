@@ -155,8 +155,8 @@ async def on_afk(event):
             else:
                 afk_since = f"`{int(seconds)}s` **ago**"
         msg = None
-        message_to_reply = f"**⛔️ IL MIO CAPO È OFF ⛔️ DA** `{total_afk_time}`\n**QUINDI NON SPAMMARE GRAZIE.**" + \
-            f"\n\n**QUANDO SONO ONLINE RISPONDO A TUTTI BYE.**\n**MOTIVO**: {reason}" \
+        message_to_reply = f"**🚫 Mr.Gucci non è al momento su Telegram.** `{total_afk_time}`\n**Attendi il ritorno del mio padrone per avere una risposta.**" + \
+            f"\n\n**👉🏻 Se devi uscirmi il culo puoi farlo in chat privata, non farti problemi.**\n**🔎 Motivo assenza:** {reason}\n\n*🖕🏻 Questo userbot è hostato su un server privato pertanto spammare non aumenterà i consumi, HEROKU merda.*" \
             if reason \
             else f"**⛔️ AL MOMENTO SONO OFF ⛔️**\n\n**LASCIA UN MESSAGGIO SE DEVI CHIEDERMI QUALCOSA GRAZIE ‼️**\n**APPENA TORNO CERCO DI RISPONDERE BYE 👍**"
         msg = await event.reply(message_to_reply)
