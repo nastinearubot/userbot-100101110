@@ -65,7 +65,7 @@ async def _(event):
     userid = event.from_id
     packname = f"Gucci Pack: Annarella Queen 💖"
     packshortname = f"vol_{pack}_with_{userid}"
-    await event.edit("**Ora ti derubo!**\n**Mi sa che ti fotto lo Sticker**")
+    await event.edit("**✅ Aggiungo sticker selezionato al Pack.**")
 
     is_a_s = is_it_animated_sticker(reply_message)
     file_ext_ns_ion = "Anubis69_roxx.png"
@@ -205,7 +205,7 @@ async def _(event):
                 await silently_send_message(bot_conv, "/done")
 
 
-    await event.edit(f"**¯\_(ツ)_/¯ Sticker rubato, ora si trova [qui](t.me/addstickers/{packshortname}), pack{pack}**"
+    await event.edit(f"**✅ Sticker aggiunto |** Lo puoi trovare [qui](t.me/addstickers/{packshortname}), pack{pack}**"
                      f"di {DEFAULTUSER}\n ")
 
 
@@ -214,16 +214,16 @@ async def _(event):
     if event.fwd_from:
         return
     if not event.is_reply:
-        await event.edit(f"`{DEFAULTUSER}:`**Rispondi a uno sticker per info.**")
+        await event.edit(f"`{DEFAULTUSER}:`**ℹ️ Rispondi a uno sticker per info.**")
         return
     rep_msg = await event.get_reply_message() 
     if not rep_msg.document:
-        await event.edit(f"`{DEFAULTUSER}:`**Rispondi a uno sticker per info.**")
+        await event.edit(f"`{DEFAULTUSER}:`**ℹ️ Rispondi a uno sticker per info.**")
         return
     stickerset_attr_s = rep_msg.document.attributes
     stickerset_attr = find_instance(stickerset_attr_s, DocumentAttributeSticker)
     if not stickerset_attr.stickerset:
-        await event.edit("sticker does not belong to a pack.")
+        await event.edit("‼️ Lo sticker non fa parte di un pack.")
         return
     get_stickerset = await bot(
         GetStickerSetRequest(
@@ -260,14 +260,14 @@ async def _(event):
         sticker = reply_message.sticker
         sticker_attrib = find_instance(sticker.attributes, DocumentAttributeSticker)
         if not sticker_attrib.stickerset:
-            await event.reply("**Questo sticker non è in un pack**")
+            await event.reply("**‼️ Lo sticker non fa parte di un pack.**")
             return
         is_a_s = is_it_animated_sticker(reply_message)
         file_ext_ns_ion = "webp"
         file_caption = "https://t.me/RoseSupport/33801"
         if is_a_s:
             file_ext_ns_ion = "tgs"
-            file_caption = "Forward the ZIP file to @AnimatedStickersRoBot to get lottIE JSON containing the vector information."
+            file_caption = "📲 Inoltra il file ZIP a @AnimatedStickersRoBot per ottenere il JSON contenente le seguenti informazioni: vector."
         sticker_set = await bot(GetStickerSetRequest(sticker_attrib.stickerset))
         pack_file = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, sticker_set.set.short_name, "pack.txt")
         if os.path.isfile(pack_file):
@@ -301,7 +301,7 @@ async def _(event):
                 pass
             if not pending_tasks:
                 break
-        await event.edit("**Download locale completo**")
+        await event.edit("**📥 Download locale completato.**")
         # https://gist.github.com/udf/e4e3dbb2e831c8b580d8fddd312714f7
         directory_name = Config.TMP_DOWNLOAD_DIRECTORY + sticker_set.set.short_name
         zipf = zipfile.ZipFile(directory_name + ".zip", "w", zipfile.ZIP_DEFLATED)
@@ -325,7 +325,7 @@ async def _(event):
         await asyncio.sleep(3)
         await event.delete()
     else:
-        await event.edit(f"`{DEFAULTUSER}:`**Rispondi ad uno sticker per scaricare il pack**")
+        await event.edit(f"`{DEFAULTUSER}:`**ℹ️ Rispondi ad uno sticker per scaricare il pack.**")
 
 
 # Helpers
@@ -366,7 +366,7 @@ async def stickerset_exists(conv, setname):
     try:
         await bot(GetStickerSetRequest(InputStickerSetShortName(setname)))
         response = await silently_send_message(conv, "/addsticker")
-        if response.text == "Invalid pack selected.":
+        if response.text == "🚫 Pack selezionato non valido.":
             await silently_send_message(conv, "/cancel")
             return False
         await silently_send_message(conv, "/cancel")
