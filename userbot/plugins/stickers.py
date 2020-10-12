@@ -63,7 +63,7 @@ async def _(event):
         user.first_name = user.id
     pack = 1
     userid = event.from_id
-    packname = f"Annarella Queen 💖"
+    packname = f"Gucci Pack: Annarella Queen 💖"
     packshortname = f"vol_{pack}_with_{userid}"
     await event.edit("**Ora ti derubo!**\n**Mi sa che ti fotto lo Sticker**")
 
@@ -143,7 +143,7 @@ async def _(event):
                 while response.text == "**Pack selezionato invalido.**":
                     pack += 1
                     prevv = int(pack) - 1
-                    packname = f"{user.first_name} Pack Vol.{pack}"
+                    packname = f"Gucci Pack: Annarella Queen 💖"
                     packshortname = f"Pack._{pack}_di_{userid}"
                     if not await stickerset_exists(bot_conv, packshortname):
                         await event.edit("**Pack No. **" + str(prevv) + "** Pieno! Creato New Pack, Vol. **" + str(pack))
