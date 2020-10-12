@@ -1,0 +1,28 @@
+"""Check if userbot alive. If you change these, you become the gayest gay such that even the gay world will disown you."""
+#IMG CREDITS: @WhySooSerious
+import asyncio
+from telethon import events
+from uniborg.util import admin_cmd
+from userbot import ALIVE_NAME
+from telethon.tl.types import ChannelParticipantsAdmins
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Unknown"
+PM_IMG = "https://telegra.ph/file/a70a13fdfa5abe61d5e7f.jpg"
+pm_caption = "**Userbot di** @LordRxnS **ONLINE ✅**\n\n"
+pm_caption += "**🛠 STATO SISTEMA:**\n"
+pm_caption += "**❕ Versione Telethon:** 6.0.9\n🐍 **Python:** 3.7.4\n"
+pm_caption += "**🗄 Stato database:** nessun errore\n"
+pm_caption += "**🔎 Github update:** master\n"
+
+@borg.on(admin_cmd(pattern=r"testalive"))
+async def friday(testalive):
+    chat = await alive.get_chat()
+    """ For .alive command, check if the bot is running.  """
+    await borg.send_file(alive.chat_id, PM_IMG,caption=pm_caption)
+    await alive.delete()
+
+    
+@borg.on(admin_cmd(pattern=r"testalive", allow_sudo=True))
+async def friday(testalive):
+    chat = await alive.get_chat()
+    """ For .alive command, check if the bot is running.  """
+    await borg.send_file(alive.chat_id, PM_IMG,caption=pm_caption)
