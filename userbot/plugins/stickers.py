@@ -50,7 +50,7 @@ async def _(event):
     if event.fwd_from:
         return
     if not event.is_reply:
-        await event.edit(f"`{DEFAULTUSER}:`**Rispondi ad un img per creare uno Stickers**")
+        await event.edit(f"`{DEFAULTUSER}:`**ℹ️ Rispondi ad un immagine per creare uno sticker.**")
         return
     reply_message = await event.get_reply_message()
     sticker_emoji = "🔥"
@@ -65,7 +65,7 @@ async def _(event):
     userid = event.from_id
     packname = f"Gucci Pack: Annarella Queen 💖"
     packshortname = f"vol_{pack}_with_{userid}"
-    await event.edit("**✅ Aggiungo sticker selezionato al Pack.**")
+    await event.edit("**👌🏻 Aggiungo sticker selezionato al Pack.**")
 
     is_a_s = is_it_animated_sticker(reply_message)
     file_ext_ns_ion = "Anubis69_roxx.png"
@@ -108,7 +108,7 @@ async def _(event):
                     packname = f"{user.id} Pack Vol.{pack}"
                     response = await silently_send_message(bot_conv, packname)
                 else:
-                    await event.edit(f"**FAILED**! @Stickers : {response.text}")
+                    await event.edit(f"**🚫 ERRORE**! @Stickers : {response.text}")
             w = await bot_conv.send_file(
                 file=uploaded_sticker,
                 allow_cache=False,
@@ -116,7 +116,7 @@ async def _(event):
             )
             response = await bot_conv.get_response()
             if "Sorry" in response.text:
-                await event.edit(f"**FAILED**! @Stickers : {response.text}")
+                await event.edit(f"**🚫 ERRORE**! @Stickers : {response.text}")
                 return
             await silently_send_message(bot_conv, sticker_emoji)
             await silently_send_message(bot_conv, "/publish")
@@ -124,7 +124,7 @@ async def _(event):
             await silently_send_message(bot_conv, "/skip")
             response = await silently_send_message(bot_conv, packshortname)
             if response.text == "Sorry, il nome è gia in uso.":
-                await event.edit(f"**FAILED**! @Stickers : {response.text}")
+                await event.edit(f"**🚫 ERRORE**! @Stickers : {response.text}")
                 return
             elif response.text == "Sorry, il nome è inaccettabile.":
                 packshortname = f"pack_{pack}_animated_{user.id}"
@@ -139,8 +139,8 @@ async def _(event):
                 force_document=True
             )
             response = await bot_conv.get_response()
-            if response.text == "**Pack selezionato invalido.**":
-                while response.text == "**Pack selezionato invalido.**":
+            if response.text == "**🚫 Pack selezionato invalido.**":
+                while response.text == "**🚫 Pack selezionato invalido.**":
                     pack += 1
                     prevv = int(pack) - 1
                     packname = f"Gucci Pack: Annarella Queen 💖"
@@ -152,7 +152,7 @@ async def _(event):
                         else:
                             response = await silently_send_message(bot_conv, "/newpack")
                         if "Yay!" not in response.text:
-                            await event.edit(f"**FAILED**! @Stickers : {response.text}")
+                            await event.edit(f"**🚫 ERRORE**! @Stickers : {response.text}")
                             return
                         response = await silently_send_message(bot_conv, packname)
                         if not response.text.startswith("Alright!"):
@@ -160,7 +160,7 @@ async def _(event):
                                 packname = f"{user.id} Pack Vol.{pack}"
                                 response = await silently_send_message(bot_conv, packname)
                             else:
-                                await event.edit(f"**FAILED**! @Stickers : {response.text}")
+                                await event.edit(f"**🚫 ERRORE**! @Stickers : {response.text}")
                         w = await bot_conv.send_file(
                             file=uploaded_sticker,
                             allow_cache=False,
@@ -168,7 +168,7 @@ async def _(event):
                         )
                         response = await bot_conv.get_response()
                         if "Sorry" in response.text:
-                            await event.edit(f"**FAILED**! @Stickers : {response.text}")
+                            await event.edit(f"**🚫 ERRORE**! @Stickers : {response.text}")
                             return
                         await silently_send_message(bot_conv, sticker_emoji)
                         await silently_send_message(bot_conv, "/publish")
@@ -176,7 +176,7 @@ async def _(event):
                         await silently_send_message(bot_conv, "/skip")
                         response = await silently_send_message(bot_conv, packshortname)
                         if response.text == "Il nome è gia in uso.":
-                            await event.edit(f"**FAILED**! @Stickers : {response.text}")
+                            await event.edit(f"**🚫 ERRORE**! @Stickers : {response.text}")
                             return
                         elif response.text == "Il nome è inaccettabile.":
                             packshortname = f"Pack_{pack}_animated_{user.id}"
@@ -192,13 +192,13 @@ async def _(event):
                         )
                         response = await bot_conv.get_response()
                         if "Sorry" in response.text:
-                            await event.edit(f"**FAILED**! @Stickers : {response.text}")
+                            await event.edit(f"**🚫 ERRORE**! @Stickers : {response.text}")
                             return
                         await silently_send_message(bot_conv, sticker_emoji)
                         await silently_send_message(bot_conv, "/done")
             else:
                 if "Sorry" in response.text:
-                    await event.edit(f"**FAILED**! @Stickers : {response.text}")
+                    await event.edit(f"**🚫 ERRORE**! @Stickers : {response.text}")
                     return
                 await silently_send_message(bot_conv, response)
                 await silently_send_message(bot_conv, sticker_emoji)
