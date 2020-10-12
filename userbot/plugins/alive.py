@@ -30,7 +30,7 @@ async def amireallyalive(alive):
                      f"**> 👤 Username:** {DEFAULTUSER}\n\n"
                      f"**Informazioni server:**\n"
                      f"**> ℹ️ Tipologia:** Server dedicato 10 Gbps\n"
-                     f"**> 🖥 OS:** Linux 4.19.0-5-amd64 #1 SMP Debian 4.19.37-5+deb10u2 x86_64 GNU/Linux\n"
+                     f"**> 🖥 OS:** Debian GNU/Linux 10 (buster)\n"
                      f"**> 🛡 Processore:** Intel Xeon Dual E5-2650 v4\n"
                      f"**> 🛡 RAM:** 512GB\n"
                      f"**> 💿 SSD:** 8TB\n"
