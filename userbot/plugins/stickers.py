@@ -63,7 +63,7 @@ async def _(event):
         user.first_name = user.id
     pack = 1
     userid = event.from_id
-    packname = f"{user.first_name} Pack Vol.{pack}"
+    packname = f"Annarella Queen 💖"
     packshortname = f"vol_{pack}_with_{userid}"
     await event.edit("**Ora ti derubo!**\n**Mi sa che ti fotto lo Sticker**")
 
