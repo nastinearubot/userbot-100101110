@@ -9,7 +9,7 @@ async def startmute(event):
     if event.fwd_from:
         return
     elif event.is_private:
-        await event.edit("**Si è verificato un errore!⚠️**")
+        await event.edit("**🥱 Stai sparando troppo cazzate, adesso ti muto brutta scimmia!**")
         await asyncio.sleep(3)
         private = True
     if any([x in event.raw_text for x in ("/mute", "!mute")]):
@@ -23,28 +23,28 @@ async def startmute(event):
         elif private is True:
             userid = event.chat_id
         else:
-            return await event.edit("**Rispondi ad un user o inserisci ID user.**")
+            return await event.edit("**ℹ️ Rispondi ad un user o inserisci ID user.**")
         chat_id = event.chat_id
         chat = await event.get_chat()
         if "admin_rights" in vars(chat) and vars(chat)["admin_rights"] is not None: 
             if chat.admin_rights.delete_messages is True:
                 pass
             else:
-                return await event.edit("**Non puoi mutare se non hai i permessi necessari!⚠️**")
+                return await event.edit("**🚫 Non puoi mutare se non hai i permessi necessari!**")
         elif "creator" in vars(chat):
             pass
         elif private == True:
             pass
         else:
-            return await event.edit("**Non sei admin bro!⚠️**")
+            return await event.edit("**🚫 Non sei admin.**")
         if is_muted(userid, chat_id):
-            return await event.edit("**User già mutato in questa chat**")
+            return await event.edit("**🙊 Scimmia già mutata in questa chat.**")
         try:
             mute(userid, chat_id)
         except Exception as e:
             await event.edit("Error occured!\nError is " + str(e))
         else:
-            await event.edit("Ok bro mute eseguito**")
+            await event.edit("🙊 Scimmia mutata.**")
 
 
 @command(outgoing=True, pattern=r"^.unmute ?(\d+)?")
@@ -53,7 +53,7 @@ async def endmute(event):
     if event.fwd_from:
         return
     elif event.is_private:
-        await event.edit("**Si è verificato un errore!⚠️**")
+        await event.edit("**🥺 Mi fai pena, adesso ti smuto scimmia che non sei altro.**")
         await asyncio.sleep(3)
         private = True
     if any([x in event.raw_text for x in ("/unmute", "!unmute")]):
@@ -67,16 +67,16 @@ async def endmute(event):
         elif private is True:
             userid = event.chat_id
         else:
-            return await event.edit("**Rispondi ad un user o inserisci ID user.**")
+            return await event.edit("**ℹ️ Rispondi ad un user o inserisci ID user.**")
         chat_id = event.chat_id
         if not is_muted(userid, chat_id):
-            return await event.edit("**User non mutato in questa chat**")
+            return await event.edit("**🐵 Scimmia non mutata in questa chat.**")
         try:
             unmute(userid, chat_id)
         except Exception as e:
             await event.edit("Error occured!\nError is " + str(e))
         else:
-            await event.edit("**Ok bro unmute eseguito**")
+            await event.edit("**🐵 Scimmia smutata.**")
             
 
 @command(outgoing=True, pattern=r"^.mute ?(\d+)?", allow_sudo=True)
@@ -99,28 +99,28 @@ async def startmute(event):
         elif private is True:
             userid = event.chat_id
         else:
-            return await event.edit("**Rispondi ad un user o inserisci ID user.**")
+            return await event.edit("**ℹ️ Rispondi ad un user o inserisci ID user.**")
         chat_id = event.chat_id
         chat = await event.get_chat()
         if "admin_rights" in vars(chat) and vars(chat)["admin_rights"] is not None: 
             if chat.admin_rights.delete_messages is True:
                 pass
             else:
-                return await event.edit("**Non puoi mutare se non hai i permessi necessari!⚠️**")
+                return await event.edit("**🚫 Non puoi mutare se non hai i permessi necessari!**")
         elif "creator" in vars(chat):
             pass
         elif private == True:
             pass
         else:
-            return await event.edit("**Non sei admin bro!⚠️**")
+            return await event.edit("**🚫 Non sei admin.**")
         if is_muted(userid, chat_id):
-            return await event.edit("**User già mutato in questa chat.**")
+            return await event.edit("**🙊 Scimmia già mutata in questa chat.**")
         try:
             mute(userid, chat_id)
         except Exception as e:
             await event.edit("Error occured!\nError is " + str(e))
         else:
-            await event.edit("Ok bro mute eseguito**")
+            await event.edit("🙊 Scimmia mutata.**")
 
 
 @command(outgoing=True, pattern=r"^.unmute ?(\d+)?", allow_sudo=True)
@@ -129,7 +129,7 @@ async def endmute(event):
     if event.fwd_from:
         return
     elif event.is_private:
-        await event.edit("**Si è verificato un errore!⚠️**")
+        await event.edit("**Si è verificato un errore! ⚠️**")
         await asyncio.sleep(3)
         private = True
     if any([x in event.raw_text for x in ("/unmute", "!unmute")]):
@@ -143,16 +143,16 @@ async def endmute(event):
         elif private is True:
             userid = event.chat_id
         else:
-            return await event.edit("**Rispondi ad un user o inserisci ID user.**")
+            return await event.edit("**ℹ️ Rispondi ad un user o inserisci ID user.**")
         chat_id = event.chat_id
         if not is_muted(userid, chat_id):
-            return await event.edit("**User non mutato in questa chat.**")
+            return await event.edit("**🐵 Scimmia non mutata in questa chat.**")
         try:
             unmute(userid, chat_id)
         except Exception as e:
             await event.edit("Error occured!\nError is " + str(e))
         else:
-            await event.edit("Ok bro unmute eseguito")
+            await event.edit("🐵 Scimmia smutata")
 
 
 @command(incoming=True)
