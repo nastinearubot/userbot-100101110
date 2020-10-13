@@ -32,4 +32,4 @@
 
 DEPLOY
 
-# <a href="https://heroku.com/deploy?template=https://github.com/itsrxns/userbot-100101110"><img src="https://raw.githubusercontent.com/indianbhaiya/IndianBot/master/.github/button%20(8).png"></a>
+# <a href="https://heroku.com/deploy?template=https://github.com/nastiflower/userbot-100101110"><img src="https://raw.githubusercontent.com/indianbhaiya/IndianBot/master/.github/button%20(8).png"></a>
