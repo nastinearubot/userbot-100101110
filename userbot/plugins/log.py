@@ -28,9 +28,9 @@ async def log(log_text):
             textx = user + log_text.pattern_match.group(1)
             await bot.send_message(BOTLOG_CHATID, textx)
         else:
-            await log_text.edit(f"`{DEFAULTUSER}:`**Inserisci oggetto del log**")
+            await log_text.edit(f"`{DEFAULTUSER}:`**Inserisci oggetto del log.**")
             return
-        await log_text.edit(f"`{DEFAULTUSER}:`**log eseguito**")
+        await log_text.edit(f"`{DEFAULTUSER}:`**✅ LOG eseguito.**")
     else:
         await log_text.edit(f"`{DEFAULTUSER}:`**Serve il log attivo per funzionare!**")
     await sleep(2)
