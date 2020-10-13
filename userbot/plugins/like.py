@@ -25,10 +25,10 @@ from userbot.system import dev_cmd
 
 @bot.on(dev_cmd("like ?(.*)", outgoing=True))
 async def like(event):
-    await event.edit("**👍🏻 A** [Gucci RxnS 4L #VVS 💎⌚🇮🇹](t.me/lordrxns) **piace questo elemento.**")
+    await event.edit("**👍🏻 a** [Gucci RxnS 4L #VVS 💎⌚🇮🇹](t.me/lordrxns) **piace questo elemento.**")
     
 
 
 @bot.on(dev_cmd("unlike ?(.*)", outgoing=True))
 async def unlike(event):
-    await event.edit("**👎🏻 A** [Gucci RxnS 4L #VVS 💎⌚🇮🇹](t.me/lordrxns) **non piace questo elemento.**")
+    await event.edit("**👎🏻 a** [Gucci RxnS 4L #VVS 💎⌚🇮🇹](t.me/lordrxns) **non piace questo elemento.**")
