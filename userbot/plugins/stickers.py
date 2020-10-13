@@ -65,7 +65,7 @@ async def _(event):
     userid = event.from_id
     packname = f"{user.first_name} Pack Vol.{pack}"
     packshortname = f"vol_{pack}_with_{userid}"
-    await event.edit("**👌🏻 Aggiungo sticker selezionato al Pack.**")
+    await event.edit("**👌🏻 Aggiungo sticker selezionato al pack.**")
 
     is_a_s = is_it_animated_sticker(reply_message)
     file_ext_ns_ion = "Anubis69_roxx.png"
@@ -100,7 +100,7 @@ async def _(event):
             else:
                 response = await silently_send_message(bot_conv, "/newpack")
             if "Yay!" not in response.text:
-                await event.edit(f"**FAILED**! @Stickers : {response.text}")
+                await event.edit(f"**🚫 ERRORE**! @Stickers : {response.text}")
                 return
             response = await silently_send_message(bot_conv, packname)
             if not response.text.startswith("Alright!"):
@@ -205,8 +205,8 @@ async def _(event):
                 await silently_send_message(bot_conv, "/done")
 
 
-    await event.edit(f"**✅ Sticker aggiunto |** Lo puoi trovare [qui](t.me/addstickers/{packshortname}), pack{pack}**"
-                     f"di {DEFAULTUSER}\n ")
+    await event.edit(f"**✅ Sticker aggiunto | Lo puoi trovare [qui](t.me/addstickers/{packshortname}), pack{pack}**"
+                     f"**di** {DEFAULTUSER}\n ")
 
 
 @bot.on(dev_cmd(pattern="packinfo"))
