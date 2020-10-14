@@ -16,8 +16,8 @@ async def _(event):
     deaths = covid.get_total_deaths()
     if country_data:
         output_text =  f"**✅ Confermati**   :   {country_data['confirmed']}\n"
-        output_text += f"**🦠 Casi attivi**  :   {country_data['active']}\n"
-        output_text += f"**☠ Morti**        :   {country_data['deaths']}\n"
+        output_text += f"**🦠 Casi attivi**    :   {country_data['active']}\n"
+        output_text += f"**☠ Morti**           :   {country_data['deaths']}\n"
         output_text += f"**🏥 Ricoverati**   :   {country_data['recovered']}\n\n"        
         output_text += f"**- - - - TOTALE - - - -**\n\n"                
         output_text += f"**☠ Morti**        :   {covid.get_total_deaths()}\n"
