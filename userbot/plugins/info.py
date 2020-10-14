@@ -249,8 +249,8 @@ async def _(event):
 📝 <b>BIO:</b> {}
 🖥 <b>Datacenter ID:</b> {}
 🖼 <b>Numero immagini profilo:</b> {}
-🚷 <b>Utente limitato?:</b> {}
-✅ <b>Utente verificato?:</b> {}
+🚷 <b>Utente limitato:</b> {}
+✅ <b>Utente verificato:</b> {}
 🤖 <b>BOT:</b> {}
 👥 <b>Gruppi in comune:</b> {}
 """.format(
