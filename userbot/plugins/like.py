@@ -24,7 +24,7 @@ from userbot import bot
 from userbot.system import dev_cmd
 
 
-@bot.on(dev_cmd("👍 like - Metti 'mi piace'", outgoing=True))
+@bot.on(dev_cmd("👍🏻 like - Metti 'mi piace'", outgoing=True))
 async def like(event):
     await event.edit("**👍🏻 a** [Gucci RxnS 4L #VVS 💎⌚🇮🇹](t.me/lordrxns) **piace questo elemento.**")
     
