@@ -24,17 +24,17 @@ from userbot import bot
 from userbot.system import dev_cmd
 
 
-@bot.on(dev_cmd("👍🏻 like - Metti 'mi piace'", outgoing=True))
+@bot.on(dev_cmd("like - Metti 'mi piace'", outgoing=True))
 async def like(event):
     await event.edit("**👍🏻 a** [Gucci RxnS 4L #VVS 💎⌚🇮🇹](t.me/lordrxns) **piace questo elemento.**")
     
 
 
-@bot.on(dev_cmd("👎🏻 dislike - Metti 'non mi piace'", outgoing=True))
+@bot.on(dev_cmd("dislike - Metti 'non mi piace'", outgoing=True))
 async def dislike(event):
     await event.edit("**👎🏻 a** [Gucci RxnS 4L #VVS 💎⌚🇮🇹](t.me/lordrxns) **non piace questo elemento.**")
 
 
-@bot.on(dev_cmd("👎🏻 unlike - Metti 'non mi piace'", outgoing=True))
+@bot.on(dev_cmd("unlike - Metti 'non mi piace'", outgoing=True))
 async def unslike(event):
     await event.edit("**👎🏻 a** [Gucci RxnS 4L #VVS 💎⌚🇮🇹](t.me/lordrxns) **non piace questo elemento.**")
