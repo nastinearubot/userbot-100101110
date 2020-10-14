@@ -19,7 +19,7 @@ async def _(event):
         output_text += f"**🦠 Casi attivi**     :   {country_data['active']}\n"
         output_text += f"**☠ Morti**              :   {country_data['deaths']}\n"
         output_text += f"**🏥 Ricoverati**     :   {country_data['recovered']}\n\n"        
-        output_text += f"**》     STATISTICA MONDIALE     《**\n\n"                
+        output_text += f"**》    STATISTICA MONDIALE    《**\n\n"                
         output_text += f"**✅ Confermati**   :   {covid.get_total_confirmed_cases()}\n"
         output_text += f"**🦠 Casi attivi**     :   {covid.get_total_active_cases()}\n"
         output_text += f"**☠ Morti**              :   {covid.get_total_deaths()}\n"
