@@ -10,8 +10,7 @@
 #
 """Commands:
 .like
-.dislike
-.unlike"""
+.dislike"""
 
 import asyncio
 import random
