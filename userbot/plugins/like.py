@@ -36,5 +36,5 @@ async def dislike(event):
 
 
 @bot.on(dev_cmd("unlike - Metti 'non mi piace'", outgoing=True))
-async def unslike(event):
+async def unlike(event):
     await event.edit("**👎🏻 a** [Gucci RxnS 4L #VVS 💎⌚🇮🇹](t.me/lordrxns) **non piace questo elemento.**")
