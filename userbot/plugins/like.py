@@ -29,6 +29,11 @@ async def like(event):
     
 
 
+@bot.on(dev_cmd("dislike ?(.*)", outgoing=True))
+async def dislike(event):
+    await event.edit("**👎🏻 a** [Gucci RxnS 4L #VVS 💎⌚🇮🇹](t.me/lordrxns) **non piace questo elemento.**")
+
+
 @bot.on(dev_cmd("unlike ?(.*)", outgoing=True))
-async def unlike(event):
+async def unslike(event):
     await event.edit("**👎🏻 a** [Gucci RxnS 4L #VVS 💎⌚🇮🇹](t.me/lordrxns) **non piace questo elemento.**")
