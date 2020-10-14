@@ -18,13 +18,13 @@ async def _(event):
         output_text =  f"**✅ Confermati**   :   {country_data['confirmed']}\n"
         output_text += f"**🦠 Casi attivi**     :   {country_data['active']}\n"
         output_text += f"**☠ Morti**              :   {country_data['deaths']}\n"
-        output_text += f"**🏥 Ricoverati**       :   {country_data['recovered']}\n\n"        
+        output_text += f"**🏥 Ricoverati**      :   {country_data['recovered']}\n\n"        
         output_text += f"**- - - - - - - - TOTALE - - - - - - - -**\n\n"                
-        output_text += f"**☠ Morti**        :   {covid.get_total_deaths()}\n"
-        output_text += f"**🏥 Ricoverati**   :   {covid.get_total_recovered()}\n"
         output_text += f"**✅ Confermati**   :   {covid.get_total_confirmed_cases()}\n"
-        output_text += f"**🦠 Casi attivi**  :   {covid.get_total_active_cases()}\n\n"
-        output_text += ("**🔄 AGGIORNAMENTO**:  "f"{datetime.utcfromtimestamp(country_data['last_update'] // 1000).strftime('%H:%M')}[GMT]\n")
+        output_text += f"**🦠 Casi attivi**     :   {covid.get_total_active_cases()}\n"
+        output_text += f"**☠ Morti**              :   {covid.get_total_deaths()}\n"
+        output_text += f"**🏥 Ricoverati**      :   {covid.get_total_recovered()}\n\n"
+        output_text += ("**🔄 AGGIORNAMENTO**:  "f"{datetime.utcfromtimestamp(country_data['last_update'] // 1000).strftime('%H:%M')} [GMT]\n")
     else:
         output_text = "**Invalid Country name**"
-    await event.edit(f"**ℹ️ CORONAVIRUS INFO IN {country}**:\n\n{output_text}")
+    await event.edit(f"**ℹ️ CORONAVIRUS Info in {country}**:\n\n{output_text}")
