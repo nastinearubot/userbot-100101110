@@ -18,7 +18,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
                 "© Userbot Help",
-                text="{}\n**🔎 Comandi: {}**".format(
+                text="{}\n\n**🔎 Comandi: {}**".format(
                     query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False
@@ -102,6 +102,6 @@ def paginate_help(page_number, loaded_plugins, prefix):
         pairs = pairs[modulo_page * number_of_rows:number_of_rows * (modulo_page + 1)] + \
             [
             (custom.Button.inline("⬅️ INDIETRO", data="{}_prev({})".format(prefix, modulo_page)),
-             custom.Button.inline("➡️ AVANTI", data="{}_next({})".format(prefix, modulo_page)))
+             custom.Button.inline("AVANTI ➡️", data="{}_next({})".format(prefix, modulo_page)))
         ]
     return pairs
