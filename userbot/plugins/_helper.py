@@ -43,7 +43,7 @@ async def cmd_list(event):
             else:
                 await event.edit(input_str + " plugin non valido!")
         else:
-            help_string = f"""**🤖 Ciao** [Gucci RxnS 4L #VVS 💎⌚🇮🇹](t.me/lordrxns) **sono il tuo BOT helper:**\n__Clicca su un bottone per avere informazioni su un comando o contatta @lordrxns per problemi/assistenza.__\n"""
+            help_string = f"""**🤖 Ciao** [Gucci RxnS 4L #VVS 💎⌚🇮🇹](t.me/lordrxns) **sono il tuo BOT helper:**\nClicca su un bottone per avere informazioni su un comando o contatta @lordrxns per problemi/assistenza.\n"""
             results = await bot.inline_query(  # pylint:disable=E0602
                 tgbotusername,
                 help_string
