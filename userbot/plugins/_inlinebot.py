@@ -13,12 +13,12 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
         builder = event.builder
         result = None
         query = event.text
-        if event.query.user_id == bot.uid and query.startswith("Userbot"):
+        if event.query.user_id == bot.uid and query.startswith("**🤖 Ciao**"):
             rev_text = query[::-1]
             buttons = paginate_help(0, CMD_LIST, "helpme")
             result = builder.article(
                 "© Userbot Help",
-                text="{}\nPlugins: {}".format(
+                text="{}\n\n**🔎 Comandi: {}**".format(
                     query, len(CMD_LIST)),
                 buttons=buttons,
                 link_preview=False
@@ -73,7 +73,7 @@ if Var.TG_BOT_USER_NAME_BF_HER is not None and tgbot is not None:
             reply_pop_up_alert = "{} is useless".format(plugin_name)
         else:
             reply_pop_up_alert = help_string
-        reply_pop_up_alert += "\n Usa .unload {} per rimuovere il plugin\n\
+        reply_pop_up_alert += "\nℹ Usa .unload {} per rimuovere il plugin\n\
             © Userbot".format(plugin_name)
         try:
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -90,7 +90,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
             helpable_plugins.append(p)
     helpable_plugins = sorted(helpable_plugins)
     modules = [custom.Button.inline(
-        "{} {}".format("ℹ️", x),
+        "{} {} {}".format("》", x , "《"),
         data="us_plugin_{}".format(x))
         for x in helpable_plugins]
     pairs = list(zip(modules[::number_of_cols], modules[1::number_of_cols]))
@@ -101,7 +101,7 @@ def paginate_help(page_number, loaded_plugins, prefix):
     if len(pairs) > number_of_rows:
         pairs = pairs[modulo_page * number_of_rows:number_of_rows * (modulo_page + 1)] + \
             [
-            (custom.Button.inline("⬅️", data="{}_prev({})".format(prefix, modulo_page)),
-             custom.Button.inline("➡️", data="{}_next({})".format(prefix, modulo_page)))
+            (custom.Button.inline("⬅️ INDIETRO", data="{}_prev({})".format(prefix, modulo_page)),
+             custom.Button.inline("AVANTI ➡️", data="{}_next({})".format(prefix, modulo_page)))
         ]
     return pairs
