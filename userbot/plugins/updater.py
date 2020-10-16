@@ -160,7 +160,7 @@ async def upstream(ups):
             )
             repo.__del__()
             return
-        await ups.edit(f'**✅ Userbot aggiornato correttamente, riavvio in corso.**\n**⏰ Tempo stimato: 5 secondi**'
+        await ups.edit(f'**✅ Userbot aggiornato correttamente, riavvio in corso.**\n**⏰ Tempo stimato: 5 minuti**'
                        )
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
