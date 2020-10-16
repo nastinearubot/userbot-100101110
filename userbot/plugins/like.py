@@ -25,9 +25,9 @@ from userbot.system import dev_cmd
 
 @bot.on(dev_cmd("like", outgoing=True))
 async def like(event):
-    await event.edit("**👍🏻 a** [AlessandrO](t.me/Boicottato) **piace questo elemento.**")
+    await event.edit("**👍🏻 a** [Marteⁿᵃᶻ💎🔥 ⁪⁬⁮⁮⁮⁮](t.me/dubitante) **piace questo elemento.**")
     
 
 @bot.on(dev_cmd("dislike", outgoing=True))
 async def dislike(event):
-    await event.edit("**👎🏻 a** [AlessandrO⁪⁬⁮](t.me/Boicottato) **non piace questo elemento.**")
+    await event.edit("**👎🏻 a** [Marteⁿᵃᶻ💎🔥 ⁪⁬⁮⁮⁮⁮](t.me/dubitante) **non piace questo elemento.**")
