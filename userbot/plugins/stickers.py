@@ -205,7 +205,7 @@ async def _(event):
                 await silently_send_message(bot_conv, "/done")
 
 
-    await event.edit(f"**✅ Sticker aggiunto |** Lo puoi trovare [qui](t.me/addstickers/{packshortname}), pack{pack}**"
+    await event.edit(f"**✅ Sticker aggiunto |** Lo puoi trovare** [qui](t.me/addstickers/{packshortname}), **pack{pack}**"
                      f"di {DEFAULTUSER}\n ")
 
 
